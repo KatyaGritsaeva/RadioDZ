@@ -1,8 +1,8 @@
 package com.gritsaeva;
 
 public class RadioMain {
-    public int currentVolume;
-    public int currentstation;
+    private int currentVolume;
+    private int currentstation;
 
     public void increaseVolume() {
         if (currentVolume < 10) {

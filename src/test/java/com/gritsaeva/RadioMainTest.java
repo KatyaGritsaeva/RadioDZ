@@ -136,6 +136,32 @@ public class RadioMainTest {
     }
 
     @Test
+    public void RadioMainlessMinVolumeTest() {
+        RadioMain volume = new RadioMain();
+        volume.setCurrentVolume(-10);
+
+        volume.lessMinVolume();
+
+        int expected = 0;
+        int actual = volume.getCurrentVolume();
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void RadioMainMoreThenMinVolumeTest() {
+        RadioMain volume = new RadioMain();
+        volume.setCurrentVolume(11);
+
+        volume.lessMinVolume();
+
+        int expected = 0;
+        int actual = volume.getCurrentVolume();
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
     public void RadioMainlessMinBoundaryMaxVolumeTest() {
         RadioMain volume = new RadioMain();
         volume.setCurrentVolume(10);

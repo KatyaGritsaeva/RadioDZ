@@ -18,6 +18,7 @@ public class RadioMainTest {
 
     }
 
+
     @Test
     public void RadioMainPrewStationBoundaryMinTest() {
         RadioMain station = new RadioMain();
@@ -35,6 +36,19 @@ public class RadioMainTest {
     public void RadioMainPrewStationBoundaryMaxTest() {
         RadioMain station = new RadioMain();
         station.setCurrentstation(10);
+
+        station.prewStation();
+
+        int expected = 9;
+        int actual = station.getCurrentstation();
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void RadioMainPrewStationBoundaryMin0Test() {
+        RadioMain station = new RadioMain();
+        station.setCurrentstation(-1);
 
         station.prewStation();
 
@@ -177,11 +191,11 @@ public class RadioMainTest {
     @Test
     public void RadioMainlessMinMiddleVolumeTest() {
         RadioMain volume = new RadioMain();
-        volume.setCurrentVolume(6);
+        volume.setCurrentVolume(-6);
 
         volume.lessMinVolume();
 
-        int expected = 5;
+        int expected = 0;
         int actual = volume.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
 

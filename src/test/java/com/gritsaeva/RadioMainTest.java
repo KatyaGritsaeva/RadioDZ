@@ -167,7 +167,7 @@ public class RadioMainTest {
         RadioMain volume = new RadioMain();
         volume.setCurrentVolume(11);
 
-        volume.lessMinVolume();
+       // volume.lessMinVolume();
 
         int expected = 0;
         int actual = volume.getCurrentVolume();

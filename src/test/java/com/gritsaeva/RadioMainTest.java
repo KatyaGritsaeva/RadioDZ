@@ -50,9 +50,9 @@ public class RadioMainTest {
         RadioMain station = new RadioMain();
         station.setCurrentstation(-1);
 
-        station.prewStation();
+        station.nextStation();
 
-        int expected = 9;
+        int expected = 1;
         int actual = station.getCurrentstation();
         Assertions.assertEquals(expected, actual);
 
@@ -167,7 +167,7 @@ public class RadioMainTest {
         RadioMain volume = new RadioMain();
         volume.setCurrentVolume(11);
 
-       // volume.lessMinVolume();
+        volume.lessMinVolume();
 
         int expected = 0;
         int actual = volume.getCurrentVolume();

@@ -48,7 +48,7 @@ public class RadioMainTest {
     @Test
     public void RadioMainPrewStationBoundaryMin0Test() {
         RadioMain station = new RadioMain();
-        station.setCurrentstation(-1);
+        station.setCurrentstation(-2);
 
         station.nextStation();
 

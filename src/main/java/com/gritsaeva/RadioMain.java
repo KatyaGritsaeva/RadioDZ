@@ -1,35 +1,50 @@
 package com.gritsaeva;
 
 public class RadioMain {
-    private int currentVolume;
-    private int currentstation;
+
+    private int maxStation = 9;
+    private int minStation = 0;
+    private int maxVolume = 10;
+    private int minVolume = 0;
+
+    private int currentVolume = minVolume;
+    private int currentStation = minStation;
+
+    public RadioMain (int maxStation, int minStation, int maxVolume, int minVolume){
+this.maxStation = maxStation;
+this.minStation = minStation;
+this.maxVolume = maxVolume;
+this.minVolume = minVolume;
+this.currentVolume = minVolume;
+this.currentStation = minStation;
+    }
 
     public void increaseVolume() {
-        if (currentVolume < 10) {
+        if (currentVolume < maxVolume) {
             currentVolume = currentVolume + 1;
         }
     }
 
     public void lessMinVolume() {
-        if (currentVolume > 0) {
+        if (currentVolume > minVolume) {
             currentVolume = currentVolume - 1;
         }
     }
 
     public void nextStation() {
-        if (currentstation < 9) {
-            currentstation++;
+        if (currentStation < maxStation) {
+            currentStation++;
         } else {
-            currentstation = 0;
+            currentStation = 0;
         }
     }
 
 
     public void prewStation() {
-        if (currentstation > 0) {
-            currentstation--;
+        if (currentStation > minStation) {
+            currentStation--;
         } else {
-            currentstation = 9;
+            currentStation = maxStation;
         }
     }
 
@@ -37,28 +52,43 @@ public class RadioMain {
         return currentVolume;
     }
 
+    public int getMaxVolume() {
+        return maxVolume;
+    }
+
+    public int getMinVolume() {
+        return minVolume;
+    }
+
     public void setCurrentVolume(int currentVolume) {
-        if (currentVolume < 0) {
+        if (currentVolume < minVolume) {
             return;
         }
-        if (currentVolume > 10) {
+        if (currentVolume > maxVolume) {
             return;
         }
         this.currentVolume = currentVolume;
     }
 
     public int getCurrentstation() {
-        return currentstation;
+        return currentStation;
     }
 
-    public void setCurrentstation(int currentstation) {
-        if (currentstation < 0) {
+    public int getMaxStation() {
+        return maxStation;
+    }
+
+    public int getMinStation() {
+        return minStation;
+    }
+    public void setCurrentstation(int currentStation) {
+        if (currentStation < minStation) {
             return;
         }
-        if (currentstation > 9) {
+        if (currentStation > maxStation) {
             return;
         }
-        this.currentstation = currentstation;
+        this.currentStation = currentStation;
     }
 
 }

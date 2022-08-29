@@ -5,10 +5,6 @@ import org.junit.jupiter.api.Test;
 
 public class RadioMainTest {
 
-//    private int maxStation = 9;
-//    private int minStation = 0;
-//    private int maxVolume = 10;
-//    private int minVolume = 0;
 
     @Test
     public void testConstructorSize() {

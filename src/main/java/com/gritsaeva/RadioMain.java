@@ -10,7 +10,7 @@ public class RadioMain {
     private int currentVolume = minVolume;
     private int currentStation = minStation;
 
-    public RadioMain(){
+    public RadioMain() {
 
     }
 

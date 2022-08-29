@@ -10,18 +10,22 @@ public class RadioMain {
     private int currentVolume = minVolume;
     private int currentStation = minStation;
 
-    public RadioMain(int maxStation, int minStation, int maxVolume, int minVolume) {
-        this.maxStation = maxStation;
-        this.minStation = minStation;
-        this.maxVolume = maxVolume;
-        this.minVolume = minVolume;
-        this.currentVolume = minVolume;
-        this.currentStation = minStation;
+    public RadioMain(){
+
     }
 
-    public RadioMain(int sizeStation, int sizeVolume) {
-        maxVolume = minVolume + sizeVolume;
-        maxStation = minStation + sizeStation;
+//    public RadioMain(int maxStation, int minStation, int maxVolume, int minVolume) {
+//        this.maxStation = maxStation;
+//        this.minStation = minStation;
+//        this.maxVolume = maxVolume;
+//        this.minVolume = minVolume;
+//        this.currentVolume = minVolume;
+//        this.currentStation = minStation;
+//    }
+
+    public RadioMain(int sizeStation) {
+        //maxVolume = minVolume + sizeVolume - 1;
+        maxStation = minStation + sizeStation - 1;
     }
 
     public void increaseVolume() {

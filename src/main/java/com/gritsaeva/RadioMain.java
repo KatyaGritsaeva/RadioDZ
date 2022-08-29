@@ -25,7 +25,7 @@ public class RadioMain {
 
     public RadioMain(int sizeStation) {
         //maxVolume = minVolume + sizeVolume - 1;
-        maxStation = minStation + sizeStation - 1;
+        this.maxStation = minStation + sizeStation - 1;
     }
 
     public void increaseVolume() {
